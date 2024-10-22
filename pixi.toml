@@ -1,0 +1,75 @@
+[project]
+name = "mf6xtd"
+version = "1.0.0"
+channels = ["conda-forge"]
+platforms = ["linux-64", "linux-aarch64", "osx-64", "osx-arm64"]
+
+[system-requirements]
+linux = "4.4.0"
+
+[tasks]
+initialize = "export PKG_CONFIG_PATH="
+install-flopy = "pip install https://github.com/modflowpy/flopy/zipball/develop"
+clone-modflow6 = "rm -rf modflow6/ && git clone https://github.com/MODFLOW-USGS/modflow6.git"
+setup-modflow6 = "cd modflow6 && meson setup builddir -Ddebug=false -Dparallel=true --prefix=$(pwd) --libdir=bin --wipe"
+install-modflow6 = "cd modflow6 && meson install -C builddir"
+test-modflow6 = "cd modflow6 && meson test --verbose --no-rebuild -C builddir"
+symlink = "ln -f modflow6/bin/mf6 .pixi/env/bin/mf6"
+test-installation = "cd installation && python test_installation.py"
+clone-triangle = "rm -rf triangle/ && git clone https://github.com/MODFLOW-USGS/triangle.git"
+install-triangle = "cd triangle/src/ && gcc triangle.c -O1 -DNO_TIMER -o triangle -lm && cd ../../ && ln -f triangle/src/triangle .pixi/env/bin/triangle"
+test-triangle = "which triangle"
+install = { depends_on = [
+  "initialize",
+  "install-flopy",
+  "clone-modflow6",
+  "setup-modflow6",
+  "install-modflow6",
+  "test-modflow6",
+  "symlink",
+	"clone-triangle",
+	"install-triangle",
+	"test-triangle",
+  "test-installation",
+] }
+jupyter = "export PATH=.pixi/env/bin:$PATH && export PKG_CONFIG_PATH= && jupyter lab"
+
+
+[dependencies]
+# required
+python = "<=3.11"
+numpy = ">=1.15.0"
+matplotlib = ">=1.4.0"
+jupyterlab = "*"
+pip = "*"
+
+# development
+pkg-config = "*"
+openmpi = "*"
+gfortran = "*"
+petsc = "*"
+meson = ">=1.1.0"
+ninja = "*"
+
+# flopy
+python-dateutil = ">=2.4.0"
+affine = "*"
+scipy = "*"
+pandas = "*"
+pyshp = "*"
+rasterio = "*"
+fiona = "*"
+descartes = "*"
+pyproj = "*"
+shapely = ">=1.8"
+geos = "*"
+geojson = "*"
+vtk = "*"
+rasterstats = "*"
+pyvista = "*"
+imageio = "*"
+pymetis = "*"
+netcdf4 = "*"
+xarray = "*"
+xmipy = "*"
+modflowapi = "*"
