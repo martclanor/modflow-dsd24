@@ -13,14 +13,20 @@ If you are using the MacOS or Linux operating system you can follow the instruct
 * Overview of MODFLOW 6 and FloPy
 * Hands-on exercise I: setup a FloPy model and run
 * Variable Density Flow
-* == BREAK
+
+  *================== BREAK ==================*
+
 * Hands-on exercise II: extended Henry problem with a tidal boundary
 * Aquifer storage and recovery
-* == LUNCH ==
+
+  *================== LUNCH ==================*
+
 * Aquifer storage and recovery - wrap up
 * Extended MODFLOW 6: context and applications
 * Hands-on exercise III: watershed GWF and GWT models
-* == BREAK ==
+
+  *================== BREAK ==================*
+
 * MODFLOW API: context and applications
 * Hands-on exercise IV: Alter the behavior of an existing MODFLOW package
 * Discussion and Wrap up
