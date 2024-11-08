@@ -2,38 +2,47 @@
 name = "mf6xtd"
 version = "1.0.0"
 channels = ["conda-forge"]
-platforms = ["linux-64", "linux-aarch64", "osx-64", "osx-arm64"]
+platforms = ["linux-64", "linux-aarch64", "osx-64", "osx-arm64", "win-64"]
 
 [system-requirements]
 linux = "4.4.0"
 
 [tasks]
-initialize = "export PKG_CONFIG_PATH= && export PATH="
 install-flopy = "pip install https://github.com/modflowpy/flopy/zipball/develop"
+
+initialize = "export PKG_CONFIG_PATH= && export PATH="
 update-pc-files = { cmd = "python update_pc_files.py", cwd = "installation" }
 clone-modflow6 = "rm -rf modflow6/ && git clone https://github.com/MODFLOW-USGS/modflow6.git"
 setup-modflow6 = { cmd = "rm -rf builddir && meson setup builddir -Ddebug=false -Dextended=true --prefix=$PIXI_PROJECT_ROOT/.pixi/envs/default/", cwd = "modflow6" }
 install-modflow6 = { cmd = "meson install -C builddir", cwd = "modflow6" }
 test-modflow6 = { cmd = "meson test --verbose --no-rebuild -C builddir", cwd = "modflow6" }
-test-installation = { cmd = "python test_installation.py", cwd = "installation" }
-clone-triangle = "rm -rf triangle/ && git clone https://github.com/MODFLOW-USGS/triangle.git"
-install-triangle = { cmd = "clang triangle.c -O1 -Wno-deprecated-non-prototype -DNO_TIMER -o $PIXI_PROJECT_ROOT/.pixi/envs/default/bin/triangle -lm", cwd = "triangle/src/" }
-test-triangle = "which triangle"
-install = { depends_on = [
+obtain-modflow = { depends_on = [
   "initialize",
-  "install-flopy",
   "update-pc-files",
   "clone-modflow6",
   "setup-modflow6",
   "install-modflow6",
   "test-modflow6",
-	"clone-triangle",
-	"install-triangle",
-	"test-triangle",
+] }
+
+test-installation = { cmd = "python test_installation.py", cwd = "installation" }
+
+install = { depends_on = [
+  "install-flopy",
+  "obtain-modflow",
   "test-installation",
 ] }
 jupyter = "export PATH=.pixi/envs/default/bin:.pixi/envs/default/lib:$PATH && export PKG_CONFIG_PATH= && jupyter lab"
 
+[target.win-64.tasks]
+download-modflow = { cmd="python -c 'from urllib.request import urlretrieve; urlretrieve(\"https://github.com/MODFLOW-USGS/modflow6-nightly-build/releases/download/20241107/win64ext.zip\", \"win64ext.zip\")'" , outputs=["win64ext.zip"]}
+unzip-modflow = {cmd = "python -c 'import shutil; shutil.unpack_archive(\"win64ext.zip\", \"win64ext\")'" }
+install-modflow = {cmd = "python -c 'import shutil; import glob; shutil.copytree(glob.glob(\"win64ext/**/bin\")[0], \".pixi/envs/default/bin\", dirs_exist_ok=True)'" }
+obtain-modflow = { depends_on = [
+  "download-modflow",
+  "unzip-modflow",
+  "install-modflow",
+] }
 
 [dependencies]
 # required
@@ -48,9 +57,7 @@ pkg-config = "*"
 openmpi = "*"
 gfortran = "*"
 clang = "*"
-petsc = "*"
 libnetcdf = "*"
-netcdf-fortran = "*"
 meson = ">=1.1.0"
 ninja = "*"
 
@@ -76,3 +83,19 @@ netcdf4 = "*"
 xarray = "*"
 xmipy = "*"
 modflowapi = "*"
+
+[target.linux-64.dependencies]
+netcdf-fortran = "*"
+petsc = "*"
+
+[target.linux-aarch64.dependencies]
+netcdf-fortran = "*"
+petsc = "*"
+
+[target.osx-64.dependencies]
+netcdf-fortran = "*"
+petsc = "*"
+
+[target.osx-arm64.dependencies]
+netcdf-fortran = "*"
+petsc = "*"
