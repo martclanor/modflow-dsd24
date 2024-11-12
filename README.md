@@ -14,13 +14,13 @@ If you are using the MacOS or Linux operating system you can follow the instruct
 * Welcome and Introductions &mdash; 09:00 to 09:10
 * Overview of MODFLOW 6 &mdash; 09:10 to 09:30
 * Brief introduction to FloPy and pixi &mdash; 09:30 to 10:15
-* **COFFEE BREAK** &mdash; 10:15 to 10:30
-* Variable density groundwater flow and transport &mdash; 10:30 to 11:55
+* **COFFEE BREAK** &mdash; 10:15 to 10:35
+* Variable density groundwater flow and transport &mdash; 10:35 to 11:55
 * **GROUP PICTURE** &mdash; 11:55 to 12:00
 * **LUNCH BREAK** &mdash; 12:00 to 13:00
 * Aquifer storage and recovery &mdash; 13:00 to 14:30
-* **COFFEE BREAK** &mdash; 14:30 to 14:45
-* Extended MODFLOW 6 &mdash; parallel, netcdf/ugrid &mdash; 14:45 to 15:45
+* **COFFEE BREAK** &mdash; 14:30 to 14:50
+* Extended MODFLOW 6 &mdash; parallel, netcdf/ugrid &mdash; 14:50 to 15:45
 * MODFLOW API demonstration &mdash; 15:45 to 16:45
 * Wrap up and evaluation &mdash; 16:45 to 17:00
 * **DRINKS** &mdash; 17:00 to 18:00
