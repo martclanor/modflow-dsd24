@@ -165,7 +165,7 @@ def get_base_dir():
     dir: str
         the working directory
     """
-    dir = pl.Path.cwd().joinpath("base")
+    dir = pl.Path.cwd().joinpath("simbase")
     return dir
 
 

@@ -5,6 +5,9 @@ installation/installation.log
 untitled*
 .pixi
 modflow6
-triangle
-working/
+working
+simbase
+simsplit
+ameland
+win64ext*
 
