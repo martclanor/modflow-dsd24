@@ -13,7 +13,7 @@ So if you want to work in the native Windows CMD shell, or you are using the Mac
 
 # Agenda
 
-* **ARRIVAL** &mdash; 08:45 to 09:00
+* **ARRIVAL** &mdash; 08:30 to 09:00
 * Welcome and Introductions &mdash; 09:00 to 09:10
 * Overview of MODFLOW 6 &mdash; 09:10 to 09:30
 * Brief introduction to FloPy and pixi &mdash; 09:30 to 10:15
