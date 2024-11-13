@@ -1,6 +1,13 @@
-# WSL and Extended MODFLOW
+# Setting up Extended MODFLOW and class materials
 
-Instructions are provided here for setting up Ubuntu on the Windows Subsystem for Linux (WSL) to work with MODFLOW.
+Instructions are provided here for installing the extended version of MODFLOW (with parallel and netcdf support), and for getting access to class materials and preparing the Python environment so you can follow along with the demos and exercises. We have three different options to prepare your machine, listed here in order of maturity:
+
+- If you have WSL successfully installed, you can continue and execute steps 1,2,3,4 below. 
+
+- Alternatively, in case you don't have WSL up and running or prefer to work within a Windows CMD shell instead, simply replace step 1 with 1A. 
+
+- Alternatively, for native Linux or MacOS machines, replace step 1 with 1B.
+
 
 ## 1. Installing WSL
 _Note that you need elevated privileges and sometimes your IT administrator to complete this step_
@@ -22,10 +29,17 @@ Alternatively, you can install Ubuntu-22.04 from the Microsoft Store. In that ca
 4.	Under the Programs and Features page, click Turn Windows features on or off on the left panel.
 5.	Scroll down and enable Windows Subsystem for Linux.
 
+With Ubuntu/Linux available in your WSL, you can go to **step 2**.
+
+## 1A. Windows native installation (Alternative)
+Recently a nightly-build has become available for extended MODFLOW on Windows. This workflow installs the right version of MODFLOW automatically as opposed to building your own from sources. The details are part of the installation script below. Just follow the instructions starting from **step 2**.
+
+## 1B. Linux or MacOS (Alternative)
+There usually is no problem running the instructions directly on Linux or MacOS. You can proceed from **step 2**.
 
 ## 2. Clone the class repo
 
-When typing "Ubuntu" in your Windows Search box, the installed version should become visible in the Apps section. Click to start a terminal window.
+When typing "Ubuntu" in your Windows Search box, the installed version should become visible in the Apps section. Click to start a terminal window. Alternatively, start a CMD shell or a terminal in your favorite MacOS or Linux environment.
 
 In the terminal, clone the class repo using the following command:
 
