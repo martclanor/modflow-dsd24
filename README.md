@@ -6,7 +6,7 @@ The purpose of this 1-day workshop is to introduce participants to MODFLOW 6 and
 # Getting Started
 Windows Subsystem for Linux (WSL) is a straight forward way for Windows users to get started using the extended version of MODFLOW. Instructions for setting up WSL and compiling the extended version of MODFLOW is provided in [setup.md](./setup.md).
 
-## Alternative to WSL
+### Alternative to WSL
 In contrast to earlier editions of the class, we now also have the environment available to run on Windows natively, i.e. without the need for WSL. Although WSL currently provides the most efficient and stable solution, this offers an alternative for people show can't get WSL set up on their machines or prefer to work within a CMD shell. In both cases, the environment is set up in isolation in order to avoid conflicts with existing installations.
 
 So if you want to work in the native Windows CMD shell, or you are using the MacOS or Linux operating system directly, you can follow the alternative instructions in [setup.md](./setup.md).
