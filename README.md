@@ -4,11 +4,11 @@
 The purpose of this 1-day workshop is to introduce participants to MODFLOW 6 and its growing set of (advanced) simulation capabilities. For each topic included in the training, there will be a short lecture on the underlying concepts and implementation, a live demonstration or exercise, or both. These exercises will use the Python language, Jupyter Notebooks, and the FloPy Package to create, run, and post-process MODFLOW 6 simulations.
 
 # Getting Started
-Windows Subsystem for Linux (WSL) is a straight forward way for Windows users to get started using the extended version of MODFLOW. Instructions for setting up WSL and compiling the extended version of MODFLOW is provided in [wsl_setup.md](./wsl_setup.md).
-
-If you are using the MacOS or Linux operating system you can follow the instructions in [wsl_setup.md](./wsl_setup.md) starting at the [Clone the class repo](./wsl_setup.md#Clone-the-class-repo).
+Windows Subsystem for Linux (WSL) is a straight forward way for Windows users to get started using the extended version of MODFLOW. Instructions for setting up WSL and compiling the extended version of MODFLOW is provided in [setup.md](./setup.md).
 
 In contrast to earlier editions of the class, we now also have the environment available to run on Windows natively, i.e. without the need for WSL. Although WSL currently provides the most efficient and stable solution, this offers an alternative for people show can't get WSL set up on their machines or prefer to work within a CMD shell. In both cases, the environment is set up in isolation in order to avoid conflicts with existing installations.
+
+So if you want to work in the native Windows CMD shell, or you are using the MacOS or Linux operating system directly, you can follow the alternative instructions in [setup.md](./setup.md).
 
 # Agenda
 
