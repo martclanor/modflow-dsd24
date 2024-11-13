@@ -58,7 +58,7 @@ matplotlib = ">=1.4.0"
 jupyterlab = "*"
 pip = "*"
 
-# development
+# development (largely redundant for win64)
 pkg-config = "*"
 gfortran = "*"
 clang = "*"
@@ -87,9 +87,12 @@ imageio = "*"
 pymetis = "*"
 netcdf4 = "*"
 xarray = "*"
-xugrid = "*"
 xmipy = "*"
 modflowapi = "*"
+
+# notebooks
+xugrid = "*"
+ipywidgets = "*"
 
 [target.linux-64.dependencies]
 openmpi = "*"
