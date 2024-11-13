@@ -4,7 +4,7 @@ Instructions are provided here for installing the extended version of MODFLOW (w
 
 - If you have WSL successfully installed, you can continue and execute steps 1,2,3,4 below. 
 
-- Alternatively, in case you don't have WSL up and running or prefer to work within a Windows CMD shell instead, simply replace step 1 with 1A. 
+- Alternatively, in case you don't have WSL up and running or prefer to work in a Windows CMD shell instead, simply replace step 1 with 1A. 
 
 - Alternatively, for native Linux or MacOS machines, replace step 1 with 1B.
 
