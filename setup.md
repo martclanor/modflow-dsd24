@@ -47,6 +47,12 @@ In the terminal, clone the class repo using the following command:
 git clone https://github.com/jdhughes-usgs/modflow-dsd24.git
 ```
 
+In case you do not have `git` installed (yet), you can also first download the zip archive from the repository at the following location:
+
+https://github.com/jdhughes-usgs/modflow-dsd24/archive/refs/heads/main.zip
+
+and unzip and rename the folder to modflow-dsd24 and continue with the next step.
+
 ## 3. Setting up extended MODFLOW 6 and pixi environment
 
 In order to set up extended MODFLOW 6, install pixi:
