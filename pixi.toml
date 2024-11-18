@@ -57,6 +57,7 @@ numpy = ">=1.15.0"
 matplotlib = ">=1.4.0"
 jupyterlab = "*"
 pip = "*"
+git = "*"
 
 # development (largely redundant for win64)
 pkg-config = "*"
