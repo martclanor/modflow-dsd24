@@ -14,3 +14,5 @@ notebooks/3_Aquifer_Storage_and_Recovery/model1d
 notebooks/4_Parallel_NetCDF_UGrid/simbase
 notebooks/4_Parallel_NetCDF_UGrid/simsplit
 notebooks/5_MODFLOW_API/temp
+
+.vscode/
